@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public chooseStudent() {
+    public void chooseStudent() {
         int num = (int)(Math.random()*33+1);
         System.out.println("Method Executed:chooseStudent");
 
