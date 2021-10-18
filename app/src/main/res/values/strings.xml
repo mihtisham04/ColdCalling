@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ColdCalling</string>
+    <string name="class_name">App Development 2nd Period</string>
+
+    <string name="random_button_name">Random</string>
+    <string name="UnCalledLog_button_name">Uncalled Log</string>
+    <string name="CalledLog_button_name">Called </string>
+
+
+
 </resources>
