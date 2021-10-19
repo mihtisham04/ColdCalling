@@ -1,7 +1,7 @@
 package com.example.coldcalling;
 
+import android.media.Image;
 import android.os.SystemClock;
-import android.widget.ImageView;
 
 import java.util.Date;
 
@@ -9,10 +9,10 @@ public class StudentProfile {
 
     private String mStudentName;
     private int mTimeWhenCalled;
-    ImageView mProfilePic;
+    Image mProfilePic;
 
 
-    private StudentProfile(String StudentName, int TimeWhenCalled, ImageView ProfilePic) {
+    private StudentProfile(String StudentName, int TimeWhenCalled, Image ProfilePic) {
         mStudentName = StudentName;
         mTimeWhenCalled = TimeWhenCalled;
         mProfilePic = ProfilePic;
@@ -23,6 +23,7 @@ public class StudentProfile {
     }
 
     private int returnTimeWhenCalled() {
+        mTimeWhenCalled = (int) System.currentTimeMillis();
         return mTimeWhenCalled;
     }
 
@@ -31,14 +32,14 @@ public class StudentProfile {
         int elapsedTime = currentTime-mTimeWhenCalled;
         int FourtyMintoMilli = 2400000;
 
-        if (elapsedTime >= FourtyMintoMilli) {
+        if (elapsedTime <= FourtyMintoMilli) {
             return true;
         }
 
         return false;
     }
 
-    private ImageView returnProfilePic() {
+    private Image returnProfilePic() {
         return mProfilePic;
     }
 

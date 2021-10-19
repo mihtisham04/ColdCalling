@@ -37,8 +37,19 @@
         android:layout_gravity="center"
         />
 
+
+    <TextView
+        android:id="@+id/StudentNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        />
+
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ProfilePicImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:srcCompat="@tools:sample/avatars" />
@@ -50,22 +61,26 @@
         >
 
         <Button
+            android:id="@+id/RandomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/random_button_name"/>
+            android:text="@string/random_button_name"
+            android:paddingBottom="20dp"
+            />
 
         <Button
+            android:id="@+id/CalledButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/CalledLog_button_name"/>
+            android:text="@string/CalledLog_button_name"
+            android:paddingBottom="20dp"/>
 
         <Button
+            android:id="@+id/UnCalledButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/UnCalledLog_button_name"/>
-
-
-
+            android:text="@string/UnCalledLog_button_name"
+            android:paddingBottom="20dp"/>
 
 
 
