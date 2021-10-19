@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.Random;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ProfilePicView;
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
     StudentProfile person = new StudentProfile("Sebastian",0,"Kermit.jpeg");
+    private StudentProfile[] studentList;
 
 }
 
@@ -45,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void chooseAndSetStudent() {
         int num = (int)(Math.random()*33);
+        StudentProfile temp = StudentProfile[num];
+
+        Image Temp = temp.returnProfilePic();
+        ProfilePicView.setImageResource(temp.returnProfilePic());
+
+        StudentNameView.setText(temp.returnStudentName());
+
+
+    }
+    public void NameGather(int numStudents) {
+         studentList = new StudentProfile[numStudents];
+
+
+
+
         StudentProfile temp = StudentProfile[num];
 
         Image Temp = temp.returnProfilePic();
