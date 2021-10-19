@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.Date;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void chooseStudent() {
         int num = (int)(Math.random()*33+1);
-        System.out.println("Method Executed:chooseStudent");
+
 
     }
 
