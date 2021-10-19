@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
     StudentProfile person = new StudentProfile("Sebastian",0,"Kermit.jpeg");
     private StudentProfile[] studentList;
-
 }
 
 
