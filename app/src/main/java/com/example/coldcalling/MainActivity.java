@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chooseAndSetStudent() {
-        int num = (int)(Math.random()*33+1);
+        int num = (int)(Math.random()*33);
         StudentProfile temp = StudentProfile[num];
 
         Image Temp = temp.returnProfilePic();
