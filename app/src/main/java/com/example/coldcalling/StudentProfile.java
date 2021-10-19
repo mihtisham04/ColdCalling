@@ -2,6 +2,9 @@ package com.example.coldcalling;
 
 import android.media.Image;
 import android.os.SystemClock;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.widget.ImageView;
 
 import java.util.Date;
 
@@ -9,13 +12,17 @@ public class StudentProfile {
 
     private String mStudentName;
     private int mTimeWhenCalled;
-    Image mProfilePic;
+    String ProfilePath;
+    Bitmap bitmap;
 
 
-    private StudentProfile(String StudentName, int TimeWhenCalled, Image ProfilePic) {
+    StudentProfile(String StudentName, int TimeWhenCalled, String imagePath) {
         mStudentName = StudentName;
         mTimeWhenCalled = TimeWhenCalled;
-        mProfilePic = ProfilePic;
+        ProfilePath = imagePath;
+        bitmap = BitmapFactory.decodeFile(ProfilePath);
+
+
     }
 
     public String returnStudentName() {
@@ -40,7 +47,10 @@ public class StudentProfile {
     }
 
     private Image returnProfilePic() {
-        return mProfilePic;
+        ImageView imageView = (ImageView) getActivity().findViewById(R.id.imageView);
+        imageView.setImageBitmap(BitmapFactory.decodeFile(ProfilePath));
+
+
     }
 
 

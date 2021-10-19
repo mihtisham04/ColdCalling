@@ -14,17 +14,12 @@ import java.util.Random;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView CurrentTimeView, StudentNameView;
     private ImageView ProfilePicView;
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
-    private Object StudentProfile;
+    StudentProfile person = new StudentProfile("Sebastian",0,"Kermit.jpeg");
 
-    private StudentProfile[] = new StudentProfile[]{
-            new StudentProfile("Sebastian", "0",)
-
-
-    }
+}
 
 
     @Override
