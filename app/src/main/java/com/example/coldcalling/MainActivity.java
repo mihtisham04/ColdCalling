@@ -55,20 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void NameGather(int numStudents) {
-         studentList = new StudentProfile[numStudents];
 
-
-
-
-        StudentProfile temp = StudentProfile[num];
-
-        Image Temp = temp.returnProfilePic();
-        ProfilePicView.setImageResource(temp.returnProfilePic());
-
-        StudentNameView.setText(temp.returnStudentName());
-
-
-    }
 
 }
