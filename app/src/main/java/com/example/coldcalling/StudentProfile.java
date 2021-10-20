@@ -12,20 +12,14 @@ import java.util.Date;
 public class StudentProfile {
 
     private String mStudentName;
-    private int mTimeWhenCalled;
-    String ProfilePath;
-    Bitmap bitmap;
+    private int TimeCalled;
     private int TimesCalled;
 
 
-    StudentProfile(String StudentName, int TimeWhenCalled, String imagePath) {
+    StudentProfile(String StudentName) {
         mStudentName = StudentName;
-        mTimeWhenCalled = TimeWhenCalled;
-        ProfilePath = imagePath;
-        bitmap = BitmapFactory.decodeFile(ProfilePath);
+        TimeCalled = 0;
         TimesCalled = 0;
-
-
     }
 
     public String returnStudentName() {
@@ -41,38 +35,23 @@ public class StudentProfile {
         return TimesCalled;
     }
 
-    private int resetTimesCalled() {
-        TimesCalled = 0;
-        return TimesCalled;
+
+    private void Call_On_Student() {
+        TimesCalled++;
+        TimeCalled = (int) System.currentTimeMillis();
+
     }
 
     private int returnTimeWhenCalled() {
-        mTimeWhenCalled = (int) System.currentTimeMillis();
-        return mTimeWhenCalled;
+        return TimeCalled;
     }
 
     public boolean wasCalledInPast40Min() {
-        int currentTime = (int) System.currentTimeMillis();
-        int elapsedTime = currentTime-mTimeWhenCalled;
-        int FourtyMintoMilli = 2400000;
-
-        if (elapsedTime <= FourtyMintoMilli) {
-            return true;
+        if (TimesCalled < 2 || (int) System.currentTimeMillis() - TimeCalled > 2400000) {
+            return false;
         }
-
-        return false;
+        return true;
     }
-
-    private Image returnProfilePic() {
-        ImageView imageView = (ImageView) getActivity().findViewById(R.id.imageView);
-        imageView.setImageBitmap(BitmapFactory.decodeFile(ProfilePath));
-
-
-    }
-
-
-
-
-
-
 }
+
+
