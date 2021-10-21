@@ -61,33 +61,34 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
 
         <Button
             android:id="@+id/RandomButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/random_button_name"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
             android:paddingBottom="20dp"
-            />
+            android:text="@string/random_button_name" />
 
         <Button
             android:id="@+id/CalledButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CalledLog_button_name"
-            android:paddingBottom="20dp"/>
+            android:layout_width="149dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp"
+            android:text="@string/CalledLog_button_name" />
 
         <Button
             android:id="@+id/UnCalledButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/UnCalledLog_button_name"
-            android:paddingBottom="20dp"/>
-
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:paddingBottom="20dp"
+            android:text="@string/UnCalledLog_button_name" />
 
 
     </LinearLayout>

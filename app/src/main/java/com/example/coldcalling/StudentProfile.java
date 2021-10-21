@@ -22,24 +22,15 @@ public class StudentProfile {
         TimesCalled = 0;
     }
 
-    public String returnStudentName() {
+
+    public String Call_On_Student() {
+        TimesCalled++;
+        TimeCalled = (int) System.currentTimeMillis();
         return mStudentName;
     }
 
-    private int returnTimesCalled() {
-        return TimesCalled;
-    }
 
-    private void Call_On_Student() {
-        TimesCalled++;
-        TimeCalled = (int) System.currentTimeMillis();
-    }
-
-    private int returnTimeWhenCalled() {
-        return TimeCalled;
-    }
-
-    public boolean wasCalledInPast40Min() {
+    public boolean StudentDone() {
         if (TimesCalled < 2 || (int) System.currentTimeMillis() - TimeCalled > 2400000) {
             return false;
         }

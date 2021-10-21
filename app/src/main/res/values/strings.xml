@@ -4,7 +4,7 @@
 
     <string name="random_button_name">Random</string>
     <string name="UnCalledLog_button_name">Uncalled Log</string>
-    <string name="CalledLog_button_name">Called </string>
+    <string name="CalledLog_button_name">Called Log</string>
 
     <string name="StudentNameTemp">Student Name</string>
 
