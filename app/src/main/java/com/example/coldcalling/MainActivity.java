@@ -30,15 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         CurrentTimeView =(TextView)findViewById(R.id.CurrentTimeView);
         String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-        CurrentTimeView.setText(currentDateTimeString);
 
+        CurrentTimeView.setText(currentDateTimeString);
         StudentNameView = (TextView)findViewById(R.id.StudentNameView);
         ProfilePicView = (ImageView)findViewById(R.id.ProfilePicImageView);
-
         RandomButton = (Button) findViewById(R.id.RandomButton);
-
         UncalledStudents = new ArrayList<StudentProfile>();
-
         CalledStudents = new ArrayList<StudentProfile>();
 
 
@@ -53,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void chooseAndSetStudent() {
         int num = (int)(Math.random()*33);
-        StudentProfile temp = StudentProfile[num];
 
         Image Temp = temp.returnProfilePic();
         ProfilePicView.setImageResource(temp.returnProfilePic());

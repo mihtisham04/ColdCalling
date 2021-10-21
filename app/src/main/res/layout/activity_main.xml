@@ -47,6 +47,7 @@
         android:id="@+id/StudentNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/StudentNameTemp"
         android:textSize="20dp"
         android:textColor="@color/black"
         android:layout_gravity="center"

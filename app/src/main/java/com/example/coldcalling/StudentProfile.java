@@ -30,16 +30,9 @@ public class StudentProfile {
         return TimesCalled;
     }
 
-    private int increaseTimesCalled() {
-        TimesCalled++;
-        return TimesCalled;
-    }
-
-
     private void Call_On_Student() {
         TimesCalled++;
         TimeCalled = (int) System.currentTimeMillis();
-
     }
 
     private int returnTimeWhenCalled() {
