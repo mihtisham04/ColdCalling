@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class StudentProfile {
@@ -15,7 +14,6 @@ public class StudentProfile {
     private int mTimeWhenCalled;
     String ProfilePath;
     Bitmap bitmap;
-    private int TimesCalled;
 
 
     StudentProfile(String StudentName, int TimeWhenCalled, String imagePath) {
@@ -23,27 +21,12 @@ public class StudentProfile {
         mTimeWhenCalled = TimeWhenCalled;
         ProfilePath = imagePath;
         bitmap = BitmapFactory.decodeFile(ProfilePath);
-        TimesCalled = 0;
 
 
     }
 
     public String returnStudentName() {
         return mStudentName;
-    }
-
-    private int returnTimesCalled() {
-        return TimesCalled;
-    }
-
-    private int increaseTimesCalled() {
-        TimesCalled++;
-        return TimesCalled;
-    }
-
-    private int resetTimesCalled() {
-        TimesCalled = 0;
-        return TimesCalled;
     }
 
     private int returnTimeWhenCalled() {
@@ -59,13 +42,15 @@ public class StudentProfile {
         if (elapsedTime <= FourtyMintoMilli) {
             return true;
         }
+
         return false;
     }
-
 
     private Image returnProfilePic() {
         ImageView imageView = (ImageView) getActivity().findViewById(R.id.imageView);
         imageView.setImageBitmap(BitmapFactory.decodeFile(ProfilePath));
+
+
     }
 
 
