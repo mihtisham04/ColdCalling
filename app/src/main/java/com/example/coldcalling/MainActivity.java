@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         UnCalledLogButton = (Button) findViewById(R.id.UnCalledButton);
         CalledLogButton= (Button) findViewById(R.id.CalledButton);
         try {
-            namebuild = new BufferedReader(new FileReader("/Users/vaibhav/AndroidStudioProjects/ColdCallingApp/app/src/main/java/com/example/coldcalling/Names.txt"));
+            namebuild = new BufferedReader(new FileReader("Names.txt"));
             String Name = namebuild.readLine();
             System.out.println(Name);
 
