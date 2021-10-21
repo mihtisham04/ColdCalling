@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.ArrayList;
 
 import android.widget.ImageView;
 
@@ -18,10 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView CurrentTimeView, StudentNameView;
     private ImageView ProfilePicView;
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
-    StudentProfile person = new StudentProfile("Sebastian",0,"Kermit.jpeg");
-    private StudentProfile[] studentList;
-}
-
+    StudentProfile person = new StudentProfile("Sebastian");
+    private ArrayList<StudentProfile> UncalledStudents;
+    private ArrayList<StudentProfile> CalledStudents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
         ProfilePicView = (ImageView)findViewById(R.id.ProfilePicImageView);
 
         RandomButton = (Button) findViewById(R.id.RandomButton);
+
+        UncalledStudents = new ArrayList<StudentProfile>();
+
+        CalledStudents = new ArrayList<StudentProfile>();
+
+
+
         RandomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,20 +62,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void NameGather(int numStudents) {
-         studentList = new StudentProfile[numStudents];
-
-
-
-
-        StudentProfile temp = StudentProfile[num];
-
-        Image Temp = temp.returnProfilePic();
-        ProfilePicView.setImageResource(temp.returnProfilePic());
-
-        StudentNameView.setText(temp.returnStudentName());
-
-
-    }
-
 }
