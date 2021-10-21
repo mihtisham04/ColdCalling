@@ -14,8 +14,6 @@ public class StudentProfile {
     private int mTimeWhenCalled;
     String ProfilePath;
     Bitmap bitmap;
-
-
     StudentProfile(String StudentName, int TimeWhenCalled, String imagePath) {
         mStudentName = StudentName;
         mTimeWhenCalled = TimeWhenCalled;
