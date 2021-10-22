@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         UncalledStudents = new ArrayList<StudentProfile>();
         CalledStudents = new ArrayList<StudentProfile>();
 
-
         try {
             InputStream is = getAssets().open("Names.txt");
             namebuild = new BufferedReader(new InputStreamReader(is));
@@ -59,10 +58,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
         }
-
-
-        UncalledStudents = new ArrayList<StudentProfile>();
-        CalledStudents = new ArrayList<StudentProfile>();
 
 
 
@@ -95,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void chooseAndSetStudent() {
         Random rand = new Random();
-        int num = rand.nextInt(UncalledStudents.size());
+        int num = rand.nextInt(UncalledStudents.size()-1);
         System.out.println(UncalledStudents.size());
         StudentProfile CurrentStudent = UncalledStudents.get(num);
         String Name = CurrentStudent.Call_On_Student();
