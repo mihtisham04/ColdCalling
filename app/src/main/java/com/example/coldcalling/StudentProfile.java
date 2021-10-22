@@ -12,21 +12,29 @@ import java.util.Date;
 public class StudentProfile {
 
     private String mStudentName;
+    private String FileName;
     private int TimeCalled;
     private int TimesCalled;
 
 
-    StudentProfile(String StudentName) {
+    StudentProfile(String StudentName, String File) {
         mStudentName = StudentName;
+        FileName = File;
         TimeCalled = 0;
         TimesCalled = 0;
     }
+
+    public String Get_File(){
+        return FileName;
+    }
+
 
 
     public String Call_On_Student() {
         TimesCalled++;
         TimeCalled = (int) System.currentTimeMillis();
         return mStudentName;
+
     }
 
 

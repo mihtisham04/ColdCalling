@@ -20,14 +20,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView CurrentTimeView, StudentNameView;
     private ImageView ProfilePicView;
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
-    StudentProfile person = new StudentProfile("Sebastian");
     private ArrayList<StudentProfile> UncalledStudents;
     private ArrayList<StudentProfile> CalledStudents;
-    BufferedReader namebuild;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        BufferedReader namebuild;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -46,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         try {
             InputStream is = getAssets().open("Names.txt");
             namebuild = new BufferedReader(new InputStreamReader(is));
-            String Name = namebuild.readLine();
-            System.out.println(Name);
+            String Line = namebuild.readLine();
 
-            while (Name != null) {
-                System.out.println(Name);
-                UncalledStudents.add(new StudentProfile(Name));
-                Name = namebuild.readLine();
-
+            while (Line != null) {
+                String[] Split = Line.split("\\|");
+                String Name = Split[0];
+                String imgfile = Split[1];
+                UncalledStudents.add(new StudentProfile(Name, imgfile));
+                Line = namebuild.readLine();
             }
         } catch (Exception e){
             e.printStackTrace();
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             StudentNameView.setText("No Students Left");
         } else {
         Random rand = new Random();
-        int num = rand.nextInt(UncalledStudents.size() - 1);
+        int num = rand.nextInt(UncalledStudents.size());
             StudentProfile CurrentStudent = UncalledStudents.get(num);
             String Name = CurrentStudent.Call_On_Student();
             if (CurrentStudent.StudentDone()) {
