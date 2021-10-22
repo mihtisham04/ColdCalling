@@ -7,11 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
 
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<StudentProfile> UncalledStudents;
     private ArrayList<StudentProfile> CalledStudents;
     BufferedReader namebuild;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +40,19 @@ public class MainActivity extends AppCompatActivity {
         RandomButton = (Button) findViewById(R.id.RandomButton);
         UnCalledLogButton = (Button) findViewById(R.id.UnCalledButton);
         CalledLogButton= (Button) findViewById(R.id.CalledButton);
+        UncalledStudents = new ArrayList<StudentProfile>();
+        CalledStudents = new ArrayList<StudentProfile>();
+
+
         try {
-            namebuild = new BufferedReader(new FileReader("Names.txt"));
+            InputStream is = getAssets().open("Names.txt");
+            namebuild = new BufferedReader(new InputStreamReader(is));
             String Name = namebuild.readLine();
             System.out.println(Name);
 
             while (Name != null) {
                 System.out.println(Name);
-                UncalledStudents.add(new StudentProfile("contentLine"));
+                UncalledStudents.add(new StudentProfile(Name));
                 Name = namebuild.readLine();
 
             }
@@ -89,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chooseAndSetStudent() {
-        int num = (int) (Math.random() * UncalledStudents.size()-1);
+        Random rand = new Random();
+        int num = rand.nextInt(UncalledStudents.size());
         System.out.println(UncalledStudents.size());
         StudentProfile CurrentStudent = UncalledStudents.get(num);
         String Name = CurrentStudent.Call_On_Student();
