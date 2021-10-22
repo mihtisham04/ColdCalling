@@ -59,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         RandomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,23 +79,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
+
     public void chooseAndSetStudent() {
+        if (UncalledStudents.size() <= 1) {
+            StudentNameView.setText("No Students Left");
+        } else {
         Random rand = new Random();
-        int num = rand.nextInt(UncalledStudents.size()-1);
-        System.out.println(UncalledStudents.size());
-        StudentProfile CurrentStudent = UncalledStudents.get(num);
-        String Name = CurrentStudent.Call_On_Student();
-        if (CurrentStudent.StudentDone()) {
-            CalledStudents.remove(num);
-            UncalledStudents.add(CurrentStudent);
+        int num = rand.nextInt(UncalledStudents.size() - 1);
+            StudentProfile CurrentStudent = UncalledStudents.get(num);
+            String Name = CurrentStudent.Call_On_Student();
+            if (CurrentStudent.StudentDone()) {
+                UncalledStudents.remove(num);
+                CalledStudents.add(CurrentStudent);
+            }
+            StudentNameView.setText(Name);
         }
-        StudentNameView.setText(Name);
     }
 }
