@@ -97,8 +97,6 @@
             android:text="@string/UnCalledLog_button_name"
             android:textSize="15dp"/>
 
-
     </LinearLayout>
-
 
 </LinearLayout>
