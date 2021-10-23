@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         CurrentTimeView =(TextView)findViewById(R.id.CurrentTimeView);
         String currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
-
         CurrentTimeView.setText(currentDateTimeString);
         StudentNameView = (TextView)findViewById(R.id.StudentNameView);
         ProfilePicView = (ImageView)findViewById(R.id.ProfilePicImageView);
@@ -89,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
         int num = rand.nextInt(UncalledStudents.size());
             StudentProfile CurrentStudent = UncalledStudents.get(num);
             String Name = CurrentStudent.Call_On_Student();
+            String picFile = CurrentStudent.Get_File();
             if (CurrentStudent.StudentDone()) {
                 UncalledStudents.remove(num);
                 CalledStudents.add(CurrentStudent);
             }
             StudentNameView.setText(Name);
+
         }
     }
 }
