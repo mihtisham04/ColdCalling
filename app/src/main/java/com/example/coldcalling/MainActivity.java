@@ -7,11 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
 
@@ -21,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView CurrentTimeView, StudentNameView;
     private ImageView ProfilePicView;
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
-    StudentProfile person = new StudentProfile("Sebastian");
     private ArrayList<StudentProfile> UncalledStudents;
     private ArrayList<StudentProfile> CalledStudents;
-    BufferedReader namebuild;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        BufferedReader namebuild;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -40,26 +39,24 @@ public class MainActivity extends AppCompatActivity {
         RandomButton = (Button) findViewById(R.id.RandomButton);
         UnCalledLogButton = (Button) findViewById(R.id.UnCalledButton);
         CalledLogButton= (Button) findViewById(R.id.CalledButton);
+        UncalledStudents = new ArrayList<StudentProfile>();
+        CalledStudents = new ArrayList<StudentProfile>();
+
         try {
-            namebuild = new BufferedReader(new FileReader("Names.txt"));
-            String Name = namebuild.readLine();
-            System.out.println(Name);
+            InputStream is = getAssets().open("Names.txt");
+            namebuild = new BufferedReader(new InputStreamReader(is));
+            String Line = namebuild.readLine();
 
-            while (Name != null) {
-                System.out.println(Name);
-                UncalledStudents.add(new StudentProfile("contentLine"));
-                Name = namebuild.readLine();
-
+            while (Line != null) {
+                String[] Split = Line.split("\\|");
+                String Name = Split[0];
+                String imgfile = Split[1];
+                UncalledStudents.add(new StudentProfile(Name, imgfile));
+                Line = namebuild.readLine();
             }
         } catch (Exception e){
             e.printStackTrace();
         }
-
-
-        UncalledStudents = new ArrayList<StudentProfile>();
-        CalledStudents = new ArrayList<StudentProfile>();
-
-
 
         RandomButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,22 +78,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
+
     public void chooseAndSetStudent() {
-        int num = (int) (Math.random() * UncalledStudents.size()-1);
-        System.out.println(UncalledStudents.size());
-        StudentProfile CurrentStudent = UncalledStudents.get(num);
-        String Name = CurrentStudent.Call_On_Student();
-        if (CurrentStudent.StudentDone()) {
-            CalledStudents.remove(num);
-            UncalledStudents.add(CurrentStudent);
+        if (UncalledStudents.size() <= 1) {
+            StudentNameView.setText("No Students Left");
+        } else {
+        Random rand = new Random();
+        int num = rand.nextInt(UncalledStudents.size());
+            StudentProfile CurrentStudent = UncalledStudents.get(num);
+            String Name = CurrentStudent.Call_On_Student();
+            if (CurrentStudent.StudentDone()) {
+                UncalledStudents.remove(num);
+                CalledStudents.add(CurrentStudent);
+            }
+            StudentNameView.setText(Name);
         }
-        StudentNameView.setText(Name);
     }
 }
