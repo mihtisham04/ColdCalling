@@ -2,6 +2,7 @@ package com.example.coldcalling;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 CalledStudents.add(CurrentStudent);
             }
             StudentNameView.setText(Name);
+            ///ProfilePicView.setImageResource(R.drawable.);
 
         }
     }
