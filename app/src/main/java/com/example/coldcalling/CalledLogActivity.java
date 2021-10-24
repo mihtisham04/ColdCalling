@@ -15,14 +15,15 @@ import java.util.ArrayList;
 public class CalledLogActivity extends AppCompatActivity {
 
     private TextView CalledTextView;
-    private Button backButton2;
+    private static ArrayList<StudentProfile> placeholder1;
+    private Button backButton1;
 
-    public static Intent newIntent(MainActivity packageContext) {
+    public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input1) {
         Intent i = new Intent(packageContext, CalledLogActivity.class);
         return i;
     }
 
-    private void updateQuestion2() {
+    private void updateQuestion1() {
         CalledTextView.setText("CalledLog");
     }
 
@@ -31,10 +32,12 @@ public class CalledLogActivity extends AppCompatActivity {
         setContentView(R.layout.called_activity);
 
         CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
-        updateQuestion2();
+        updateQuestion1();
 
-        backButton2 = (Button) findViewById(R.id.BackButton2);
-        backButton2.setOnClickListener(new View.OnClickListener() {
+
+
+        backButton1 = (Button) findViewById(R.id.BackButton1);
+        backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

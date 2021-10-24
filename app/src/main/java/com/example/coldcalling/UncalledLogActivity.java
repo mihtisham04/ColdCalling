@@ -13,15 +13,15 @@ import java.util.ArrayList;
 public class UncalledLogActivity extends AppCompatActivity {
 
     private TextView UnCalledTextView;
-    private static ArrayList<StudentProfile> placeholder;
-    private Button backButton1;
+    private static ArrayList<StudentProfile> placeholder2;
+    private Button backButton2;
 
-    public static Intent newIntent(MainActivity packageContext) {
+    public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input2) {
         Intent i = new Intent(packageContext, UncalledLogActivity.class);
         return i;
     }
 
-    private void updateQuestion1() {
+    private void updateQuestion2() {
         UnCalledTextView.setText("UncalledLog");
     }
 
@@ -30,10 +30,12 @@ public class UncalledLogActivity extends AppCompatActivity {
         setContentView(R.layout.uncalled_activity);
 
         UnCalledTextView = (TextView) findViewById(R.id.UnCalledTextBox);
-        updateQuestion1();
+        updateQuestion2();
 
-        backButton1 = (Button) findViewById(R.id.BackButton1);
-        backButton1.setOnClickListener(new View.OnClickListener() {
+        //placeholder2;
+
+        backButton2 = (Button) findViewById(R.id.BackButton2);
+        backButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
