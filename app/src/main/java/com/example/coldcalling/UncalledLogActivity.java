@@ -32,8 +32,6 @@ public class UncalledLogActivity extends AppCompatActivity {
         UnCalledTextView = (TextView) findViewById(R.id.UnCalledTextBox);
         updateQuestion1();
 
-
-
         backButton1 = (Button) findViewById(R.id.BackButton1);
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +39,5 @@ public class UncalledLogActivity extends AppCompatActivity {
                 finish();
            }
         });
-
     }
-
 }

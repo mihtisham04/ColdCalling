@@ -26,8 +26,7 @@ public class CalledLogActivity extends AppCompatActivity {
         CalledTextView.setText("CalledLog");
     }
 
-
-    protected void OnCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.called_activity);
 
