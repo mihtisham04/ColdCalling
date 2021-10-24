@@ -74,9 +74,8 @@ public class MainActivity extends AppCompatActivity {
         UnCalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String placeholder2 = "input";
                 Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this);
-                uncalled.putParcelableArrayListExtra(placeholder2, (ArrayList<? extends Parcelable>) UncalledStudents);
+                uncalled.putExtra("UncalledLog", UncalledStudents);
                 startActivity(uncalled);
             }
         });
@@ -84,9 +83,7 @@ public class MainActivity extends AppCompatActivity {
         CalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String placeholder1 = "placeholder1";
                 Intent called = CalledLogActivity.newIntent(MainActivity.this);
-                called.putParcelableArrayListExtra(placeholder1, (ArrayList<? extends Parcelable>) CalledStudents);
                 startActivity(called);
             }
         });

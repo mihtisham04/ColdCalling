@@ -37,14 +37,6 @@ public class CalledLogActivity extends AppCompatActivity {
         CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
         updateQuestion1();
 
-        placeholder1a = getIntent().getParcelableExtra(inhere);
-
-        for (StudentProfile temp : placeholder1a) {
-
-
-        }
-
-
 
 
         backButton1 = (Button) findViewById(R.id.BackButton1);

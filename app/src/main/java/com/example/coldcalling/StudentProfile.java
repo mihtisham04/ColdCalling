@@ -1,16 +1,17 @@
 package com.example.coldcalling;
 
 import android.media.Image;
+import android.os.Parcelable;
 import android.os.SystemClock;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.Date;
 
-public class StudentProfile {
-
+public class StudentProfile implements Serializable {
     private String mStudentName;
     private String FileName;
     private int TimeCalled;
@@ -22,6 +23,11 @@ public class StudentProfile {
         FileName = File;
         TimeCalled = 0;
         TimesCalled = 0;
+    }
+
+
+    public String JustTheName() {
+        return mStudentName;
     }
 
     public String Call_On_Student() {
