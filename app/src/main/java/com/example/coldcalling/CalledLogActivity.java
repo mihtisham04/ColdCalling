@@ -18,8 +18,8 @@ public class CalledLogActivity extends AppCompatActivity {
     private Button backButton2;
 
     public static Intent newIntent(MainActivity packageContext) {
-        Intent i = new Intent(packageContext, CalledLogActivity.class);
-        return i;
+        Intent called = new Intent(packageContext, CalledLogActivity.class);
+        return called;
     }
 
     private void updateQuestion2() {

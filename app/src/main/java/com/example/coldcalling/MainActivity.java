@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent called = CalledLogActivity.newIntent(MainActivity.this);
                 startActivity(called);
+
             }
         });
     }
