@@ -89,14 +89,41 @@ public class MainActivity extends AppCompatActivity {
         int num = rand.nextInt(UncalledStudents.size());
             StudentProfile CurrentStudent = UncalledStudents.get(num);
             String Name = CurrentStudent.Call_On_Student();
-            String picFile = CurrentStudent.Get_File();
             if (CurrentStudent.StudentDone()) {
                 UncalledStudents.remove(num);
                 CalledStudents.add(CurrentStudent);
             }
             StudentNameView.setText(Name);
-            ///ProfilePicView.setImageResource(R.drawable.);
+            int id = getPhotoId(Name);
+            if (id != 0) {
+                ProfilePicView.setImageResource(id);
+            }
 
         }
+    }
+
+    public int getPhotoId(String n){
+        if (n.equals("Aamir Ali")) {
+            return R.drawable.aamir_ali;
+        }
+        if (n.equals("Adrian Yan")) {
+            return R.drawable.adrian_yan;
+        }
+        if (n.equals("Alexander Aney")) {
+            return R.drawable.alex_aney;
+        }
+        if (n.equals("Bipra Dey")) {
+            return R.drawable.bipra_dey;
+        }
+        if (n.equals("Daniel Dultsin")) {
+            return R.drawable.daniel_dultsin;
+        }
+        if (n.equals("Darren Dong")) {
+            return R.drawable.darren_dong;
+        }
+        if (n.equals("Dennis Wang")) {
+            return R.drawable.dennis_wang;
+        }
+        return 0;
     }
 }

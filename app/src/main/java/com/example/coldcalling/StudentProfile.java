@@ -24,12 +24,6 @@ public class StudentProfile {
         TimesCalled = 0;
     }
 
-    public String Get_File(){
-        return FileName;
-    }
-
-
-
     public String Call_On_Student() {
         TimesCalled++;
         TimeCalled = (int) System.currentTimeMillis();
