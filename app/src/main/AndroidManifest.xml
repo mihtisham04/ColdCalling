@@ -21,10 +21,13 @@
 
         <activity
             android:name=".UncalledLogActivity"
+            android:label="UncalledLog"
             android:exported="true"
             />
 
-        <activity android:name=".CalledLogActivity"
+        <activity
+            android:name=".CalledLogActivity"
+            android:label="CalledLog"
             android:exported="true"
             />
 

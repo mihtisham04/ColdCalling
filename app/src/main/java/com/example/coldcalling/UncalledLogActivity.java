@@ -31,7 +31,6 @@ public class UncalledLogActivity extends AppCompatActivity {
 
 
 
-
         backButton1 = (Button) findViewById(R.id.BackButton1);
         backButton1.setOnClickListener(new View.OnClickListener() {
             @Override
