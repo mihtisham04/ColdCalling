@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+
     <TextView
         android:id="@+id/UnCalledTextBox"
         android:layout_width="match_parent"
@@ -24,10 +25,4 @@
         android:textSize="20dp"
         android:typeface="serif"
         />
-
-
-
-
-
-
 </LinearLayout>
