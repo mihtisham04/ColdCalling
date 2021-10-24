@@ -33,7 +33,6 @@ public class StudentProfile implements Serializable {
     }
 
 
-
     public String JustTheName() {
         return mStudentName;
     }

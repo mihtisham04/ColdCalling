@@ -40,7 +40,7 @@ public class CalledLogActivity extends AppCompatActivity {
         String text = "";
 
         for (StudentProfile temp: CalledLog) {
-            String input = temp.JustTheName();
+            String input = temp.JustTheName() + " was called " + temp.Show_Time() + " times";
             text = text.concat(input + "\n");
         }
 
