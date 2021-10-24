@@ -18,5 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".UncalledLogActivity"
+            android:exported="true"
+            />
+
+        <activity android:name=".CalledLogActivity"
+            android:exported="true"
+            />
+
     </application>
 </manifest>
