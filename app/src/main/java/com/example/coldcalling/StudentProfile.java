@@ -26,7 +26,7 @@ public class StudentProfile implements Serializable {
     }
 
     public int getTimeCalled(){
-        return TimeCalled;
+        return TimesCalled;
     }
 
 
