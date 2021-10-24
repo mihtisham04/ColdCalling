@@ -16,7 +16,7 @@ public class CalledLogActivity extends AppCompatActivity {
     private TextView CalledTextView;
     private Button backButton2;
 
-    public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input) {
+    public static Intent newIntent(MainActivity packageContext) {
         Intent i = new Intent(packageContext, CalledLogActivity.class);
         return i;
     }

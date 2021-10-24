@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         UnCalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this, UncalledStudents);
+                Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this);
                 startActivity(uncalled);
             }
         });
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         CalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent called = CalledLogActivity.newIntent(MainActivity.this, CalledStudents);
+                Intent called = CalledLogActivity.newIntent(MainActivity.this);
                 startActivity(called);
             }
         });
