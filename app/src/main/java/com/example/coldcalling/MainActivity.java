@@ -99,9 +99,9 @@ public class MainActivity extends AppCompatActivity {
         int num = rand.nextInt(UncalledStudents.size());
             StudentProfile CurrentStudent = UncalledStudents.get(num);
             String Name = CurrentStudent.Call_On_Student();
+            CalledStudents.add(CurrentStudent);
             if (CurrentStudent.StudentDone()) {
                 UncalledStudents.remove(num);
-                CalledStudents.add(CurrentStudent);
             }
             StudentNameView.setText(Name);
             int id = getPhotoId(Name);
@@ -123,9 +123,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if (n.equals("Bipra Dey")) {
             return R.drawable.bipra_dey;
-        }
-        if (n.equals("Daniel Belkin")) {
-            return R.drawable.blank_student;
         }
         if (n.equals("Daniel Dultsin")) {
             return R.drawable.daniel_dultsin;
@@ -198,9 +195,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if (n.equals("Tanushri Sundaram")) {
             return R.drawable.tanushri_sundaram;
-        }
-        if (n.equals("Vaibhav Hariani")) {
-            return R.drawable.blank_student;
         }
         if (n.equals("Vasu Patel")) {
             return R.drawable.vasu;

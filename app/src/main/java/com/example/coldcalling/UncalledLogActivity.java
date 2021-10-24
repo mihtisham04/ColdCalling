@@ -36,8 +36,10 @@ public class UncalledLogActivity extends AppCompatActivity {
         String text = "";
 
         for (StudentProfile temp: UncalledLog) {
-            String input = temp.JustTheName();
-            text = text.concat(input + "\n");
+            if (temp.getTimeCalled() == 0) {
+                String input = temp.JustTheName();
+                text = text.concat(input + "\n");
+            }
         }
 
         UnCalledTextView.setText(text);

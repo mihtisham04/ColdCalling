@@ -25,6 +25,10 @@ public class StudentProfile implements Serializable {
         TimesCalled = 0;
     }
 
+    public int getTimeCalled(){
+        return TimeCalled;
+    }
+
 
     public String JustTheName() {
         return mStudentName;
