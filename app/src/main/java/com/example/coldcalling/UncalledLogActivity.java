@@ -2,6 +2,7 @@ package com.example.coldcalling;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,11 +14,15 @@ public class UncalledLogActivity extends AppCompatActivity {
 
     private TextView UnCalledTextView;
     private static ArrayList<StudentProfile> placeholder;
-    private Button backButton;
+    private Button backButton1;
 
     public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input) {
         Intent i = new Intent(packageContext, UncalledLogActivity.class);
         return i;
+    }
+
+    private void updateQuestion1() {
+        UnCalledTextView.setText("UncalledLog");
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +30,16 @@ public class UncalledLogActivity extends AppCompatActivity {
         setContentView(R.layout.uncalled_activity);
 
         UnCalledTextView = (TextView) findViewById(R.id.UnCalledTextBox);
+        updateQuestion1();
 
 
-
-
-
-
-
-
-
+        backButton1 = (Button) findViewById(R.id.BackButton1);
+        backButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 

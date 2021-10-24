@@ -69,12 +69,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
             }
         });
 
         CalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
 
             }
         });
