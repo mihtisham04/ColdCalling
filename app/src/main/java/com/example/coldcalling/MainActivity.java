@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
             return R.drawable.xinrui_ge;
         }
         if (n.equals("Zhian Maysoon")) {
-            return R.drawable.daniel_dultsin;
+            return R.drawable.zhian_maysoon;
         }
         return R.drawable.blank_student;
     }
