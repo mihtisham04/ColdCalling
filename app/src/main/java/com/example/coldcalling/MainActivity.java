@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.util.Date;
 import java.util.Random;
+import android.content.Intent;
 
 import android.widget.ImageView;
 
@@ -68,17 +69,16 @@ public class MainActivity extends AppCompatActivity {
         UnCalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this, UncalledStudents);
+                startActivity(uncalled);
             }
         });
 
         CalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
+                Intent called = CalledLogActivity.newIntent(MainActivity.this, CalledStudents);
+                startActivity(called);
             }
         });
     }
