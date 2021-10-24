@@ -95,9 +95,8 @@ public class MainActivity extends AppCompatActivity {
             }
             StudentNameView.setText(Name);
             int id = getPhotoId(Name);
-            if (id != 0) {
-                ProfilePicView.setImageResource(id);
-            }
+            ProfilePicView.setImageResource(id);
+
 
         }
     }
@@ -115,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
         if (n.equals("Bipra Dey")) {
             return R.drawable.bipra_dey;
         }
+        if (n.equals("Daniel Belkin")) {
+            return R.drawable.blank_student;
+        }
         if (n.equals("Daniel Dultsin")) {
             return R.drawable.daniel_dultsin;
         }
@@ -124,6 +126,81 @@ public class MainActivity extends AppCompatActivity {
         if (n.equals("Dennis Wang")) {
             return R.drawable.dennis_wang;
         }
-        return 0;
+        if (n.equals("Dhruv Amin")) {
+            return R.drawable.dhruv_amin;
+        }
+        if (n.equals("Eden Kogan")) {
+            return R.drawable.eden_kogan;
+        }
+        if (n.equals("Elie Belkin")) {
+            return R.drawable.elie_belkin;
+        }
+        if (n.equals("Evelyn Paskhaver")) {
+            return R.drawable.evelyn_paskhaver;
+        }
+        if (n.equals("Fardin Iqbal")) {
+            return R.drawable.fardin_iqbal;
+        }
+        if (n.equals("Gareth Chaston")) {
+            return R.drawable.gareth_chaston;
+        }
+        if (n.equals("Jerry He")) {
+            return R.drawable.jerry_he;
+        }
+        if (n.equals("Kenny Cao")) {
+            return R.drawable.kenny_cao;
+        }
+        if (n.equals("Marc Rosenberg")) {
+            return R.drawable.marc_rosenberg;
+        }
+        if (n.equals("Matthew Chen")) {
+            return R.drawable.matthew_chen;
+        }
+        if (n.equals("Michael Wu")) {
+            return R.drawable.michael;
+        }
+        if (n.equals("Ming Lin")) {
+            return R.drawable.ming_lin;
+        }
+        if (n.equals("Mohammed Ihtisham")) {
+            return R.drawable.mohammed_ihtisham;
+        }
+        if (n.equals("Noam Canter")) {
+            return R.drawable.noam;
+        }
+        if (n.equals("Ralf Roland Pacia")) {
+            return R.drawable.ralf_pacia;
+        }
+        if (n.equals("Samuel Iskhakov")) {
+            return R.drawable.samuel_iskhakov;
+        }
+        if (n.equals("Sean Kerrigan")) {
+            return R.drawable.sean;
+        }
+        if (n.equals("Sebastian Marinescu")) {
+            return R.drawable.sebastian;
+        }
+        if (n.equals("Selina Li")) {
+            return R.drawable.selina_li;
+        }
+        if (n.equals("Shuyue Chen")) {
+            return R.drawable.shuyue_chen;
+        }
+        if (n.equals("Tanushri Sundaram")) {
+            return R.drawable.tanushri_sundaram;
+        }
+        if (n.equals("Vaibhav Hariani")) {
+            return R.drawable.blank_student;
+        }
+        if (n.equals("Vasu Patel")) {
+            return R.drawable.vasu;
+        }
+        if (n.equals("Xinrui Ge")) {
+            return R.drawable.xinrui_ge;
+        }
+        if (n.equals("Zhian Maysoon")) {
+            return R.drawable.daniel_dultsin;
+        }
+        return R.drawable.blank_student;
     }
 }
