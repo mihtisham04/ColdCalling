@@ -31,8 +31,6 @@ public class CalledLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.called_activity);
 
-        CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
-        updateQuestion2();
 
 
 

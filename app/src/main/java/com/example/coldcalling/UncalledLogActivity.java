@@ -29,8 +29,7 @@ public class UncalledLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uncalled_activity);
 
-        UnCalledTextView = (TextView) findViewById(R.id.UnCalledTextBox);
-        updateQuestion1();
+
 
 
         backButton1 = (Button) findViewById(R.id.BackButton1);
