@@ -28,6 +28,10 @@ public class StudentProfile implements Serializable {
     public int getTimeCalled(){
         return TimesCalled;
     }
+    public int getId(){
+        return Integer.parseInt(FileName);
+    }
+
 
 
     public String JustTheName() {
