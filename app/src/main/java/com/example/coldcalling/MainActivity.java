@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent called = CalledLogActivity.newIntent(MainActivity.this);
+                called.putExtra("CalledLog", CalledStudents);
                 startActivity(called);
             }
         });

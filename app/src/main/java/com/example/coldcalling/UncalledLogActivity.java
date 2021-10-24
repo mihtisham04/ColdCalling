@@ -21,16 +21,14 @@ public class UncalledLogActivity extends AppCompatActivity {
         return i;
     }
 
-    private void updateQuestion2() {
-        UnCalledTextView.setText("UncalledLog");
-    }
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uncalled_activity);
 
         UnCalledTextView = (TextView) findViewById(R.id.UnCalledTextBox);
-        updateQuestion2();
+
 
 
         UncalledLog = (ArrayList<StudentProfile>)getIntent().getExtras().getSerializable("UncalledLog");

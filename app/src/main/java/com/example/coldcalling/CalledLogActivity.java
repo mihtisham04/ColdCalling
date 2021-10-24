@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CalledLogActivity extends AppCompatActivity {
 
     private TextView CalledTextView;
-    private static ArrayList<StudentProfile> placeholder1a;
+    private static ArrayList<StudentProfile> CalledLog;
     private Button backButton1;
 
 
@@ -32,10 +32,19 @@ public class CalledLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.called_activity);
 
-        String inhere = "placeholder1";
 
         CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
-        updateQuestion1();
+
+        CalledLog = (ArrayList<StudentProfile>)getIntent().getExtras().getSerializable("CalledLog");
+
+        String text = "";
+
+        for (StudentProfile temp: CalledLog) {
+            String input = temp.JustTheName();
+            text = text.concat(input + "\n");
+        }
+
+        CalledTextView.setText(text);
 
 
 
