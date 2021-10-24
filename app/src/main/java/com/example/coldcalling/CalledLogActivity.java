@@ -18,8 +18,8 @@ public class CalledLogActivity extends AppCompatActivity {
     private Button backButton2;
 
     public static Intent newIntent(MainActivity packageContext) {
-        Intent called = new Intent(packageContext, CalledLogActivity.class);
-        return called;
+        Intent i = new Intent(packageContext, CalledLogActivity.class);
+        return i;
     }
 
     private void updateQuestion2() {
@@ -31,16 +31,15 @@ public class CalledLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.called_activity);
 
-            CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
-            updateQuestion2();
+        CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
+        updateQuestion2();
 
-            backButton2 = (Button) findViewById(R.id.BackButton2);
-            backButton2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
-                }
-            });
+        backButton2 = (Button) findViewById(R.id.BackButton2);
+        backButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
-
