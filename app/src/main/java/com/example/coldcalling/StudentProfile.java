@@ -28,7 +28,11 @@ public class StudentProfile {
         TimesCalled++;
         TimeCalled = (int) System.currentTimeMillis();
         return mStudentName;
+    }
 
+    public String Show_Time() {
+        Integer temp = TimeCalled;
+        return temp.toString();
     }
 
 

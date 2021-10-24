@@ -15,10 +15,11 @@ import java.util.ArrayList;
 public class CalledLogActivity extends AppCompatActivity {
 
     private TextView CalledTextView;
-    private static ArrayList<StudentProfile> placeholder1;
+    private static ArrayList<StudentProfile> placeholder1a;
     private Button backButton1;
 
-    public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input1) {
+
+    public static Intent newIntent(MainActivity packageContext) {
         Intent i = new Intent(packageContext, CalledLogActivity.class);
         return i;
     }
@@ -31,8 +32,18 @@ public class CalledLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.called_activity);
 
+        String inhere = "placeholder1";
+
         CalledTextView = (TextView) findViewById(R.id.CalledTextBox);
         updateQuestion1();
+
+        placeholder1a = getIntent().getParcelableExtra(inhere);
+
+        for (StudentProfile temp : placeholder1a) {
+
+
+        }
+
 
 
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.util.Date;
+import java.util.FormatFlagsConversionMismatchException;
 import java.util.Random;
 import android.content.Intent;
 
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button RandomButton, UnCalledLogButton, CalledLogButton;
     private ArrayList<StudentProfile> UncalledStudents;
     private ArrayList<StudentProfile> CalledStudents;
+
 
 
     @Override
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         CalledLogButton= (Button) findViewById(R.id.CalledButton);
         UncalledStudents = new ArrayList<StudentProfile>();
         CalledStudents = new ArrayList<StudentProfile>();
+
+
 
         try {
             InputStream is = getAssets().open("Names.txt");
@@ -69,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
         UnCalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this, UncalledStudents);
+                String placeholder2 = "input";
+                Intent uncalled = UncalledLogActivity.newIntent(MainActivity.this);
+                uncalled.putParcelableArrayListExtra(placeholder2, (ArrayList<? extends Parcelable>) UncalledStudents);
                 startActivity(uncalled);
             }
         });
@@ -77,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
         CalledLogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent called = CalledLogActivity.newIntent(MainActivity.this, CalledStudents);
+                String placeholder1 = "placeholder1";
+                Intent called = CalledLogActivity.newIntent(MainActivity.this);
+                called.putParcelableArrayListExtra(placeholder1, (ArrayList<? extends Parcelable>) CalledStudents);
                 startActivity(called);
             }
         });

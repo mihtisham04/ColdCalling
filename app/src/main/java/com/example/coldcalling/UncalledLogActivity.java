@@ -16,7 +16,7 @@ public class UncalledLogActivity extends AppCompatActivity {
     private static ArrayList<StudentProfile> placeholder2;
     private Button backButton2;
 
-    public static Intent newIntent(MainActivity packageContext, ArrayList<StudentProfile> input2) {
+    public static Intent newIntent(MainActivity packageContext) {
         Intent i = new Intent(packageContext, UncalledLogActivity.class);
         return i;
     }
