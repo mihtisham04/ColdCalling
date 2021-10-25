@@ -69,27 +69,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="20dp"
+            android:paddingBottom="15dp"
             android:text="@string/CalledLog_button_name"
-            android:textSize="15dp" />
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/RandomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="20dp"
+            android:paddingBottom="15dp"
             android:text="@string/random_button_name"
-            android:textSize="15dp" />
+            android:textSize="12dp" />
 
         <Button
             android:id="@+id/UnCalledButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:paddingBottom="20dp"
+            android:paddingBottom="15dp"
             android:text="@string/UnCalledLog_button_name"
-            android:textSize="15dp" />
+            android:textSize="12dp" />
 
     </LinearLayout>
 

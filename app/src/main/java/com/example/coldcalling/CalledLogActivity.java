@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class CalledLogActivity extends AppCompatActivity {
 
@@ -40,8 +41,11 @@ public class CalledLogActivity extends AppCompatActivity {
         String text = "";
 
         for (StudentProfile temp: CalledLog) {
-            String input = temp.JustTheName() + " was called " + temp.getTimeCalled() + " times";
-            text = text.concat(input + "\n");
+            String input = temp.JustTheName();
+            long timeCalled = temp.time_was_called();
+            Date datecalled = new Date(timeCalled);
+            String time = java.text.DateFormat.getDateTimeInstance().format(datecalled);
+            text = text.concat(input + ", Called at " + time + "" + "\n");
         }
 
         CalledTextView.setText(text);
