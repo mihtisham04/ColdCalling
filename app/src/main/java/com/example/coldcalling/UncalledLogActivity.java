@@ -34,6 +34,9 @@ public class UncalledLogActivity extends AppCompatActivity {
         UncalledLog = (ArrayList<StudentProfile>)getIntent().getExtras().getSerializable("UncalledLog");
 
         String text = "";
+        if (UncalledLog.isEmpty()) {
+            text = "No Students Left!";
+        }
 
         for (StudentProfile temp: UncalledLog) {
             if (temp.getTimeCalled() == 0) {
